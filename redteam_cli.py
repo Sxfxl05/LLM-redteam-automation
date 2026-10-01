@@ -151,6 +151,7 @@ if __name__ == "__main__":
     parser.add_argument("-s", "--strategy", default="all", 
                         choices=["all", "direct", "persona", "base64", "hypothetical", "suffix_injection"],
                         help="Attack mutation strategy")
+    parser.add_argument("-u", "--url", type=str, default="http://localhost:11434/api/generate", help="Target API endpoint URL (Ollama or Defense Proxy)")
     parser.add_argument("-o", "--output", default="final_attack_telemetry.json", help="Output JSON log path")
 
     args = parser.parse_args()
