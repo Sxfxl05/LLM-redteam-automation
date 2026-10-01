@@ -42,7 +42,7 @@ def export_telemetry(json_filepath: str = "final_attack_telemetry.json"):
     for s, v in breakdown.items():
         asr = round((v["hits"] / v["total"]) * 100, 1) if v["total"] > 0 else 0
         print(f"{s:<22} | {v['total']:<10} | {v['hits']:<8} | {asr}%")
-
+        print("-" * 55)
     # Export to CSV for Member 4
     csv_filename = json_filepath.replace(".json", ".csv")
     with open(csv_filename, "w", newline="", encoding="utf-8") as csvfile:
